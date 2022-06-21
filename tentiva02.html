@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Nativas</title>
+    <script>
+
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+        function adicionar() {
+            var item = document.getElementById('campo').value
+
+            if (item == '') {
+                alert("Informe um valor valido.")
+            } else {
+                //lógica: se o valor for diferente de -1, quer dizer que já existe um campo igual.
+                if (objetos.indexOf(item) !== -1) {
+                    alert("Objeto já foi adicionado")
+                    //lógica: se não, caso seja igual a -1 o valor ainda não existe, então vamos add ele a Array.    
+                } else {
+                    objetos.push(item)
+                    console.log(objetos)
+                    document.getElementById('campo').value = ''
+                }
+            }
+        }
+
+        function ordem() {
+            objetos.sort()
+            console.log(objetos)
+        }
+
+    </script>
+</head>
+
+<body>
+    <h3>Tentativa 02</h3>
+    <div>
+        <input type="text" id="campo" placeholder="Digite aqui:">
+        <button onclick="adicionar()">Adicionar</button>
+        <button onclick="ordem()">Ordenar</button>
+    </div>
+
+
+
+</body>
+
+</html>
